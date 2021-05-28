@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .main-page {
+            width: 80%;
+            background-color: #ffffff;
+            height: 100%;
+        }
+        
+        .main-page__header {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn_basket {
+            background-color: #5222D0;
+            color: #ffffff;
+            Font-family: Intro;
+            font-size: 25px;
+            border-radius: 20px;
+            padding: 10px 25px;
+            margin-top: 50px;
+        }
+        
+        .article-button-icon {
+            margin-left: 10px;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .main-page__article {
+                display: flex;
+                justify-content: space-around;
+                height: 50%;
+                flex-wrap: wrap;
+            }
+        }
+        
+        .main-page__article-header {
+            Font-family: Intro;
+            Font-style: Regular;
+            Font-size: 2rem;
+        }
+        
+        .main-page__article-text {
+            Font-family: Roboto Slab;
+            Font-style: Light;
+            Font-size: 1.2rem;
+        }
+        
+        .main-page__footer {
+            display: flex;
+            justify-content: left;
+        }
+        
+        .main-page__footer-buy,
+        .main-page__footer-delivery,
+        .main-page__footer-help {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="main-page">
+        <div class="main-page__header">
+            <div class="main-page__logo">
+                <a href=""><img src="/week8/img/logo.svg" alt="logo"></a>
+            </div>
+            <div class="main-page__btn">
+                <button class="btn_basket">Корзина<img class="article-button-icon" src="/week8/img/ico.png"></button>
+            </div>
+        </div>
+
+
+        <div class="main-page__article">
+            <div class="article-article">
+                <div class="main-page__article-header">
+                    <h1>Виртуальная <br> реальность <br>без проводов</h1>
+                </div>
+                <div class="main-page__article-text">
+                    <p>Лучшее, что случалось с виртуальным миром <br> в реальности. Новый компактный шлем<br> без проводов и дорогих комьютеров.</p>
+                </div>
+                <div class="main-page__article-button">
+                    <button class="btn_basket">Корзина<img class="article-button-icon" src="/week8/img/ico2.png"></button>
+                </div>
+            </div>
+            <div class="article-img">
+                <div><img style="height: 70%;" src="/week8/img/bgrd.svg" width="100%"></div>
+
+            </div>
+        </div>
+
+
+
+        <div class="main-page__footer">
+            <div class="main-page__footer-opportunity">
+                <a style="color: #5222d0" href="#">Возможности</a></div>
+            <div class="main-page__footer-buy">
+                <a style="color: #5222d0" href="#">Где купить</a></div>
+            <div class="main-page__footer-delivery">
+                <a style="color: #5222d0" href="#">Доставка</a></div>
+            <div class="main-page__footer-help">
+                <a style="color: #5222d0" href="#">Помощь</a></div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
