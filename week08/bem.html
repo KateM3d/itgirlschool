@@ -6,64 +6,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
 
     <style>
-        .main-page {
-            width: 80%;
-            background-color: #ffffff;
-            height: 100%;
+        @media screen and (mix-width: 764px) {
+            .main-page,
+            .opp-page {
+                width: 80%;
+                background-color: #ffffff;
+                height: 60%;
+            }
         }
-        
-        .main-page__header {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .btn_basket {
-            background-color: #5222D0;
-            color: #ffffff;
-            Font-family: Intro;
-            font-size: 25px;
-            border-radius: 20px;
-            padding: 10px 25px;
-            margin-top: 50px;
-        }
-        
-        .article-button-icon {
-            margin-left: 10px;
-        }
-        
-        @media screen and (min-width: 768px) {
+        /* .opp-page__articles {
+                display: grid;
+                grid-template-columns: 0.5fr;
+                grid-template-rows: 10% 1fr 1fr 1fr 1fr;
+                row-gap: 10px;
+            }*/
+        /*   @media screen and (min-width: 768px) {
             .main-page__article {
                 display: flex;
                 justify-content: space-around;
                 height: 50%;
                 flex-wrap: wrap;
             }
+        }*/
+        
+        .main-page__header,
+        .opp-page__header {
+            display: flex;
+            justify-content: space-between;
         }
         
-        .main-page__article-header {
-            Font-family: Intro;
-            Font-style: Regular;
-            Font-size: 2rem;
+        .btn_basket,
+        .btn_signup {
+            background-color: #5222D0;
+            color: #ffffff;
+            font-size: 25px;
+            border-radius: 20px;
+            padding: 10px 25px;
         }
         
-        .main-page__article-text {
-            Font-family: Roboto Slab;
-            Font-style: Light;
-            Font-size: 1.2rem;
+        .btn_signup {
+            margin-left: 30px;
         }
         
-        .main-page__footer {
+        .article-button-icon {
+            margin-left: 10px;
+        }
+        
+        .main-page__article {
+            display: flex;
+            justify-content: space-around;
+            height: 30%;
+            flex-wrap: wrap;
+        }
+        
+        .main-page__article-header,
+        .opp-page__title-header {
+            Font-size: 1.8rem;
+        }
+        
+        .main-page__footer,
+        .opp-page__footer {
             display: flex;
             justify-content: left;
+            margin-bottom: 100px;
+            margin-left: 5%;
+        }
+        
+        .opp-page__footer {
+            margin-top: 20px;
         }
         
         .main-page__footer-buy,
         .main-page__footer-delivery,
         .main-page__footer-help {
             padding-left: 20px;
+        }
+        
+        .opp-page__content {
+            margin-left: 50px;
+        }
+        
+        .opp-page__articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 65% 1fr;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            column-gap: 50px;
+        }
+        
+        .opp-page__title-header {
+            font-size: 20px;
+        }
+        
+        .main-page__article-text,
+        .opp-page__title-text {
+            font-family: Roboto Slab;
+            font-style: Light;
+            font-size: 1.2rem;
+            line-height: 32px;
+            line-height: 160%;
+            text-align: Left;
+            vertical-align: Top;
+        }
+        
+        .opp-page__title1,
+        .opp-page__title4 {
+            border: 1px solid #BB2247;
+            padding: 31px;
+        }
+        
+        .opp-page__title4 {
+            margin-left: -12px;
+            margin-top: -10px;
+            margin-right: 12px;
+        }
+        
+        .opp-page__title2,
+        .opp-page__title3,
+        .opp-page__title4,
+        .opp-page__title5 {
+            padding: 28px;
+        }
+        
+        .opp-page__form {
+            background-color: #EC615B;
+            width: 365px;
+            height: 233px;
+        }
+        
+        .opp-page__form-title {
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 40px;
+            Line-height: 36px;
+            text-align: left;
+            padding: 40px 0 20px 30px;
+        }
+        
+        .opp-page__form-inner>input {
+            width: 300px;
+            height: 40px;
+            align-self: center;
+            margin-left: 30px;
         }
     </style>
 </head>
@@ -76,7 +165,7 @@
                 <a href=""><img src="/week8/img/logo.svg" alt="logo"></a>
             </div>
             <div class="main-page__btn">
-                <button class="btn_basket">Корзина<img class="article-button-icon" src="/week8/img/ico.png"></button>
+                <button class="btn_basket">КОРЗИНА<img class="article-button-icon" src="/week8/img/ico.png"></button>
             </div>
         </div>
 
@@ -84,13 +173,13 @@
         <div class="main-page__article">
             <div class="article-article">
                 <div class="main-page__article-header">
-                    <h1>Виртуальная <br> реальность <br>без проводов</h1>
+                    <h1>ВИРТУАЛЬНАЯ <br> РЕАЛЬНОСТЬ <br> БЕЗ ПРОВОДОВ</h1>
                 </div>
                 <div class="main-page__article-text">
                     <p>Лучшее, что случалось с виртуальным миром <br> в реальности. Новый компактный шлем<br> без проводов и дорогих комьютеров.</p>
                 </div>
                 <div class="main-page__article-button">
-                    <button class="btn_basket">Корзина<img class="article-button-icon" src="/week8/img/ico2.png"></button>
+                    <button class="btn_basket">КОРЗИНА<img class="article-button-icon" src="/week8/img/ico2.png"></button>
                 </div>
             </div>
             <div class="article-img">
@@ -103,18 +192,112 @@
 
         <div class="main-page__footer">
             <div class="main-page__footer-opportunity">
-                <a style="color: #5222d0" href="#">Возможности</a></div>
+                <a style="color: #5222d0; text-decoration: none;" href="#">Возможности</a></div>
             <div class="main-page__footer-buy">
-                <a style="color: #5222d0" href="#">Где купить</a></div>
+                <a style="color: #5222d0; text-decoration: none;" href="#">Где купить</a></div>
             <div class="main-page__footer-delivery">
-                <a style="color: #5222d0" href="#">Доставка</a></div>
+                <a style="color: #5222d0; text-decoration: none;" href="#">Доставка</a></div>
             <div class="main-page__footer-help">
-                <a style="color: #5222d0" href="#">Помощь</a></div>
+                <a style="color: #5222d0; text-decoration: none;" href="#">Помощь</a></div>
         </div>
 
     </div>
     </div>
     </div>
+    </div>
+    <div class="opp-page">
+        <div class="opp-page__header">
+            <div class="opp-page__logo">
+                <a href=""><img src="/week8/img/logo.svg" alt="logo"></a>
+            </div>
+            <div class="main-page__btn">
+                <button class="btn_basket">КОРЗИНА<img class="article-button-icon" src="/week8/img/ico.png"></button>
+            </div>
+        </div>
+        <div class="opp-page__content">
+            <!-- center part of the 2nd page-->
+            <div class="opp-page__title">
+                <h1>ВОЗМОЖНОСТИ </h1>
+            </div>
+
+            <div class="opp-page__articles">
+                <div class="opp-page__title1">
+                    <img src="/week8/img/imgtitle1.svg" alt="img title1">
+                    <div class="opp-page__title-header">
+                        <h2>БЕЗ ПРОВОДОВ</h2>
+                    </div>
+                    <div class="opp-page__title-text">
+                        <p>Шлем работает без проводов. Не нужен ни компьютер, ни внешнее питание, ни большое помещение, чтобы расставить трекеры.</p>
+                    </div>
+                </div>
+                <div class="opp-page__title2">
+                    <img src="/week8/img/imgtitle2.svg" alt="img title2">
+                    <div class="opp-page__title-header">
+                        <h2>БЕЗ КОМПЬЮТЕРА</h2>
+                    </div>
+                    <div class="opp-page__title-text">
+                        <p>Современным VR-шлемам нужен мощный компьютер, чтобы запускать игры. Наш шлем запускает игры из облака, поэтому просто наслаждайтесь.</p>
+                    </div>
+                </div>
+                <div class="opp-page__title3">
+                    <img src="/week8/img/imgtitle3.svg" alt="img title3">
+                    <div class="opp-page__title-header">
+                        <h2>ДО 10 ЧАСОВ РАБОТЫ</h2>
+                    </div>
+                    <div class="opp-page__title-text">
+                        <p>Несмотря на компактность и производительность, шлем может работать до 10 часов — даже, если вы играете в самые ресурсоемкие игры.</p>
+                    </div>
+                </div>
+
+                <div class="opp-page__title4">
+                    <div class="opp-page__title-header">
+                        <h2>СОТНИ ИГР</h2>
+                    </div>
+                    <div class="opp-page__title-text">
+                        <p>Уже сейчас вам доступно более сотни игр: от высокобюджетных ААА-тайтлов до маленьких независимых проектов. Скоро их станет еще больше.</p>
+                    </div>
+                </div>
+                <div class="opp-page__title5">
+                    <div class="opp-page__title-header">
+                        <h2>ПОЧТИ ДАРОМ</h2>
+                    </div>
+                    <div class="opp-page__title-text">
+                        <p>По сравнению с другими VR-шлемами наш стоит гораздо меньше. И вы существенно экономите на мощном компьютере.</p>
+                    </div>
+                </div>
+                <div class="opp-page__title6-form">
+                    <div class="opp-page__form">
+                        <!--form, email, button-->
+                        <form>
+                            <div class="opp-page__form-title">
+                                НОВОСТИ
+                            </div>
+                            <div class="opp-page__form-inner">
+                                <input type="email" placeholder="Эл. почта">
+                            </div>
+                            <div class="opp-page__button">
+                                <button class="btn_signup">ПОДПИСАТЬСЯ</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="opp-page__footer">
+        <div class="main-page__footer-opportunity">
+            <a style="color: #505050; text-decoration: none;" href="#">Возможности</a></div>
+        <div class="main-page__footer-buy">
+            <a style="color: #505050; text-decoration: none;" href="#">Где купить</a></div>
+        <div class="main-page__footer-delivery">
+            <a style="color: #505050; text-decoration: none;" href="#">Доставка</a></div>
+        <div class="main-page__footer-help">
+            <a style="color: #505050; text-decoration: none;" href="#">Помощь</a></div>
+    </div>
+
     </div>
 </body>
 
