@@ -1,2 +1,0 @@
-# itgirlschool
-Frontend learning

@@ -1,0 +1,19 @@
+body {
+    background-color: pink;
+}
+
+.test {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.btn {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(252, 176, 69, 1) 100%);
+    padding: 40px 60px;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 40px;
+}
