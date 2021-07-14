@@ -1,4 +1,9 @@
 function btn() {
     let user = prompt(`What is your name?`);
-    alert(`Hello ${user}! Have a Great Day!`);
+    if (user === "") {
+        alert(`Please enter your name`);
+    } else {
+
+        alert(`Hello ${user}! Have a Great Day!`);
+    }
 }
