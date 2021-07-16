@@ -1,6 +1,6 @@
 function btn() {
     let user = prompt(`What is your name?`);
-    if (user === "") {
+    if (user === "" || user === null || user.trim() === "") {
         alert(`Please enter your name`);
     } else {
 
