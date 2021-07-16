@@ -1,4 +1,45 @@
-let num1;
+function enterNumber() {
+    let num1 = prompt('Enter First Number');
+
+    if (num1.trim().length !== 0 && !Number.isNaN(Number(num1))) {
+        let num2 = prompt('Enter Second Number');
+        if (num2.trim().length !== 0 && !Number.isNaN(Number(num2))) {
+            return [Number(num1), Number(num2)];
+
+        } else {
+            alert('Numbers only!')
+        }
+
+    } else {
+        alert(`Numbers only!`);
+    }
+}
+
+
+
+
+function calcPlus() {
+    let [num1, num2] = enterNumber();
+    alert(num1 + num2);
+}
+
+function calcMinus() {
+    let [num1, num2] = enterNumber();
+    alert(num1 - num2);
+}
+
+function calcDivide() {
+    let [num1, num2] = enterNumber();
+    alert(num1 / num2);
+}
+
+function calcMultiply() {
+    let [num1, num2] = enterNumber();
+    alert(num1 * num2);
+}
+
+
+/*let num1;
 let num2;
 
 function enterNumber() {
@@ -25,41 +66,8 @@ function calcMultiply() {
     enterNumber();
     alert(num1 * num2);
 }
-
-
-
-/*function enterNumber() {
-    let num1 = prompt('Enter First Number');
-    let num2 = prompt('Enter Second Number');
-    plus = Number(num1) + Number(num2);
-    minus = Number(num1) - Number(num2);
-    divide = Number(num1) / Number(num2);
-    multiply = Number(num1) * Number(num2);
-    
-}
-
-function calcPlus() {
-    enterNumber();
-    alert(plus);
-}
-
-function calcMinus() {
-    enterNumber();
-    alert(minus);
-}
-
-function calcDivide() {
-    enterNumber();
-    alert(divide);
-}
-
-function calcMultiply() {
-    enterNumber();
-    alert(multiply);
-}
-
-
 */
+
 
 /*function calcPlus() {
     let num1 = prompt('Enter First Number');
