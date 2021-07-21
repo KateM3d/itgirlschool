@@ -1,0 +1,33 @@
+body {
+    background-color: #FFE3E3;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-family: 'Dancing Script';
+    color: #99154E;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#pictures {
+    width: 500px;
+    height: 700px;
+}
+
+.btn {
+    background-color: #FFF5B7;
+    border: none;
+    font-size: 20px;
+    font-family: 'Dancing Script';
+    color: #99154E;
+}
+
+.btn:hover {
+    cursor: pointer;
+}

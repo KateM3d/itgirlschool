@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+    color: black;
+}
+
+.letters {
+    border: 1px solid black;
+    padding: 10px 100%;
+    margin: 10px;
+}
+
+.red {
+    background-color: #CD113B;
+}
+
+.orange {
+    background-color: #FFBA47;
+}
+
+.yellow {
+    background-color: #F5FF65;
+}
+
+.green {
+    background-color: #96CD39;
+}
+
+.lightBlue {
+    background-color: #BBF1FA;
+}
+
+.blue {
+    background-color: #185ADB;
+}
+
+.purple {
+    background-color: #52006A;
+}

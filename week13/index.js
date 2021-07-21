@@ -1,4 +1,73 @@
+/*function calcPlus() {
+
+    let num1 = document.getElementById('numberOne').value;
+    if (num1.trim().length === 0 && Number.isNaN(Number(num1))) {
+
+        alert('Numbers only!');
+    }
+
+    let num2 = document.getElementById('numberTwo').value;
+    if (num2.trim().length === 0 && Number.isNaN(Number(num2))) {
+
+        alert('Numbers only!');
+    }
+
+
+    result = Number(num1) + Number(num2);
+    document.getElementById("result").value = result;
+
+}
+*/
+/*
+
 function enterNumber() {
+
+    let num1 = document.getElementById('numberOne').value;
+
+    if (num1.trim().length === 0 && Number.isNaN(Number(num1))) {
+
+        alert('Numbers only!');
+    }
+    let num2 = document.getElementById('numberTwo').value;
+    if (num2.trim().length === 0 && Number.isNaN(Number(num2))) {
+
+        alert('Numbers only!');
+    }
+}
+
+
+function calcPlus() {
+
+    let [num1, num2] = enterNumber();
+    let result = num1 + num2;
+    document.getElementById("result").value = result;
+
+}
+
+function calcMinus() {
+    let [num1, num2] = enterNumber();
+    let result = num1 - num2;
+    document.getElementById("result").value = result;
+}
+
+function calcDivide() {
+    let [num1, num2] = enterNumber();
+    let result = num1 / num2;
+    document.getElementById("result").value = result;
+}
+
+function calcMultiply() {
+    let [num1, num2] = enterNumber();
+    let result = num1 * num2;
+    document.getElementById("result").value = result;
+}
+
+
+enterNumber()
+
+
+
+/*function enterNumber() {
     let num1 = prompt('Enter First Number');
 
     if (num1.trim().length !== 0 && !Number.isNaN(Number(num1))) {
@@ -36,59 +105,4 @@ function calcDivide() {
 function calcMultiply() {
     let [num1, num2] = enterNumber();
     alert(num1 * num2);
-}
-
-
-/*let num1;
-let num2;
-
-function enterNumber() {
-    num1 = Number(prompt('Enter First Number'));
-    num2 = Number(prompt('Enter Second Number'));
-}
-
-function calcPlus() {
-    enterNumber();
-    alert(num1 + num2);
-}
-
-function calcMinus() {
-    enterNumber();
-    alert(num1 - num2);
-}
-
-function calcDivide() {
-    enterNumber();
-    alert(num1 / num2);
-}
-
-function calcMultiply() {
-    enterNumber();
-    alert(num1 * num2);
-}
-*/
-
-
-/*function calcPlus() {
-    let num1 = prompt('Enter First Number');
-    let num2 = prompt('Enter Second Number');
-    alert(Number(num1) + Number(num2));
-}
-
-function calcMinus() {
-    let num1 = prompt('Enter First Number');
-    let num2 = prompt('Enter Second Number');
-    alert(Number(num1) - Number(num2));
-}
-
-function calcDivide() {
-    let num1 = prompt('Enter First Number');
-    let num2 = prompt('Enter Second Number');
-    alert(Number(num1) / Number(num2));
-}
-
-function calcMultiply() {
-    let num1 = prompt('Enter First Number');
-    let num2 = prompt('Enter Second Number');
-    alert(Number(num1) * Number(num2));
 }*/

@@ -1,4 +1,4 @@
-body {
+    body {
     background: rgb(18, 9, 40);
     background: linear-gradient(0deg, rgba(18, 9, 40, 1) 0%, rgba(88, 23, 180, 1) 100%);
     background-repeat: no-repeat;
@@ -12,13 +12,27 @@ body {
     justify-content: center;
 }
 
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
 .inputField {
     margin-bottom: 40px;
     padding: 30px;
-    width: 450px;
     border-radius: 20px;
     border: 5px solid #e4de1c;
     font-size: 20px;
+    align-self: center;
+}
+
+.resultField {
+    padding: 30px;
+    width: 50px;
+    border-radius: 20px;
+    border: 5px solid #e4de1c;
+    align-self: center;
+    margin-bottom: 40px;
 }
 
 .line {
@@ -39,4 +53,3 @@ body {
 .result {
     color: wheat;
     padding: 40px 160px;
-}
