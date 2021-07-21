@@ -1,0 +1,72 @@
+            body {
+                background: rgb(18, 9, 40);
+                background: linear-gradient(0deg, rgba(18, 9, 40, 1) 0%, rgba(88, 23, 180, 1) 100%);
+                background-repeat: no-repeat;
+                height: 100vh;
+            }
+            
+            .container {
+                margin-top: 5vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .input {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+            }
+            
+            .inputField {
+                margin-bottom: 40px;
+                padding: 30px;
+                border-radius: 20px;
+                border: 5px solid #e4de1c;
+                font-size: 20px;
+                align-self: center;
+            }
+            
+            .resultField {
+                padding: 30px;
+                width: 50px;
+                border-radius: 20px;
+                border: 5px solid #e4de1c;
+                align-self: center;
+                margin-bottom: 40px;
+            }
+            
+            .line {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .btn {
+                background: rgb(5, 6, 10);
+                background: radial-gradient(circle, rgba(5, 6, 10, 1) 0%, rgba(228, 222, 28, 0.7287289915966386) 100%);
+                padding: 50px 70px;
+                border-radius: 20%;
+                margin: 10px;
+                font-size: 40px;
+            }
+            
+            .btnSmall {
+                background: rgb(5, 6, 10);
+                background: radial-gradient(circle, rgba(5, 6, 10, 1) 0%, rgba(228, 222, 28, 0.7287289915966386) 100%);
+                padding: 30px 80px;
+                border-radius: 20%;
+                margin: 10px;
+                font-size: 40px;
+                display: flex;
+            }
+            
+            .result {
+                color: wheat;
+                padding: 40px 160px;
+            }
+            
+            .clearResult {
+                display: flex;
+                justify-content: center;
+            }
