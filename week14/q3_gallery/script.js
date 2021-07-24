@@ -1,24 +1,30 @@
 const back = document.getElementById("back");
 const next = document.getElementById("next");
 
-const images = ["/week14/q3_gallery/img/1.jpg", "/week14/q3_gallery/img/2.jpg", "/week14/q3_gallery/img/3.jpg", "/week14/q3_gallery/img/4.jpg"];
+const getPath = (picNum) => `/q3_gallery/img/${picNum}.jpg`;
+const slider = document.getElementById("pictures");
+const picCount = 5;
 
-let i = 0;
+
+
+let i = 1;
 
 next.addEventListener("click", () => {
     i++;
-    if (i > images.length - 1) {
-        i = 0;
+    if (i > picCount) {
+        i = 1;
     }
-    document.getElementById("pictures").src = images[i];
+
+    slider.src = getPath(i);
 
 
 });
 
 back.addEventListener("click", () => {
     i--;
-    if (i < 0) {
-        i = images.length - 1;
+    if (i < 1) {
+        i = picCount;
     }
-    document.getElementById("pictures").src = images[i];
+
+    slider.src = getPath(i);
 });
