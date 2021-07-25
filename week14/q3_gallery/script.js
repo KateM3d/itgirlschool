@@ -1,7 +1,7 @@
 const back = document.getElementById("back");
 const next = document.getElementById("next");
 
-const getPath = (picNum) => `/q3_gallery/img/${picNum}.jpg`;
+const getPath = (picNum) => `./img/${picNum}.jpg`;
 const slider = document.getElementById("pictures");
 const picCount = 5;
 
