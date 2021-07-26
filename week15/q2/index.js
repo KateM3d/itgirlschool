@@ -1,18 +1,22 @@
 function check() {
 
     let firstName = document.getElementById('firstName');
+    let midName = document.querySelector('#midName');
     let lastName = document.querySelector('#lastName');
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
-    let passwordConf = document.querySelector('#confPassword');
+
 
     let message = document.querySelector('#errorMessage');
     message.innerHTML = '';
 
-    if (!isValidEntry(firstName) || !isValidEntry(lastName) || !isValidEntry(email) || !isValidEntry(password) || !isValidEntry(passwordConf)) {
+    if (!isValidEntry(firstName) || !isValidEntry(midName) || !isValidEntry(lastName) || !isValidEntry(email) || !isValidEntry(password)) {
 
-        message.innerHTML += 'Oops! your are missing something'
+        message.innerHTML += 'Oops! your are missing something! <br> Please make sure all the info is provided'
+
+
     } else {
+
         Swal.fire({
             title: 'Awesome!',
             text: 'Welcome!',
