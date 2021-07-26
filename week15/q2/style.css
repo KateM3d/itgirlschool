@@ -53,4 +53,9 @@ h2 {
 
 #errorMessage {
     color: red;
+    font-size: 25px;
+    font-weight: 900;
+    background-color: #fff;
+    margin: 10px;
+    border: none;
 }
