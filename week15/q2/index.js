@@ -19,7 +19,7 @@ function check() {
 
         Swal.fire({
             title: 'Awesome!',
-            text: 'Welcome!',
+            text: `${firstName.value} ${lastName.value} Welcome to the Magic World!`,
             imageUrl: 'https://images.unsplash.com/photo-1600986600826-aa5b82e73a65?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODh8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
             imageWidth: 400,
             imageHeight: 300,
