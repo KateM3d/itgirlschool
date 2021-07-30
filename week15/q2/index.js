@@ -10,11 +10,10 @@ function check() {
     let message = document.querySelector('#errorMessage');
     message.innerHTML = '';
 
-    if (!isValidEntry(firstName) || !isValidEntry(midName) || !isValidEntry(lastName) || !isValidEntry(email) || !isValidEntry(password)) {
 
+
+    if (!isFormValid(firstName, midName, lastName, email, password)) {
         message.innerHTML += 'Oops! your are missing something! <br> Please make sure all the info is provided'
-
-
     } else {
 
         Swal.fire({
@@ -31,7 +30,9 @@ function check() {
 
 function isValidEntry(info) {
     return info.value.trim() !== "";
+}
 
+function isFormValid(firstName, midName, lastName, email, password) {
 
-
+    return isValidEntry(firstName) && isValidEntry(midName) && isValidEntry(lastName) && isValidEntry(email) && isValidEntry(password)
 }
