@@ -1,5 +1,8 @@
-// function show() {
-//     let selectedColor = document.getElementById('color');
+//   let selectedColor = document.getElementById('color');
+
+
+//function bgColorChange() {
+//   
 //     if (selectedColor.value === "pink") {
 //         document.body.style.backgroundColor = "#E99497";
 //     } else if (selectedColor.value === "orange") {
@@ -11,8 +14,9 @@
 //     }
 // }
 
-function show() {
-    let selectedColor = document.getElementById('color');
+let selectedColor = document.getElementById('color');
+
+function bgColorChange() {
     switch (selectedColor.value) {
         case 'pink':
             document.body.style.backgroundColor = "#E99497";
