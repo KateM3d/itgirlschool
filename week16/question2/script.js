@@ -43,6 +43,8 @@ const carYear = [
     [2021, 8000]
 ];
 
+const priceComponents = []
+
 
 
 const carMileage = [
@@ -85,7 +87,6 @@ function showModel() {
     // select year
     modelSelected.addEventListener('change', showYear);
 
-
 }
 
 function showYear() {
@@ -96,6 +97,7 @@ function showYear() {
     createOptions(yearsOptions, yearSelected);
     yearSelected.disabled = false;
     yearSelected.addEventListener('change', showMileage);
+
 }
 
 
@@ -129,30 +131,37 @@ function showColor() {
 
 
 function createOptions(id, idSelected) {
+
+    while (idSelected.firstChild) {
+        idSelected.removeChild(idSelected.firstChild);
+    }
+
     id.forEach(item => {
         let option = document.createElement('option');
         option.value = item[0];
         option.innerText = item[0];
         idSelected.appendChild(option);
     })
+
 }
 
+
 function getModelByBrand(make) {
-    let modelInfo = [];
+
     if (make === "Nisan") {
-        modelInfo = nisanModels;
+        return nisanModels;
     } else if (make === "Toyota") {
-        modelInfo = toyotaModels;
+        return toyotaModels;
     } else if (make === "Honda") {
-        modelInfo = hondaModels;
+        return hondaModels;
     } else if (make === "Mercedes") {
-        modelInfo = mercedesModels;
+        return mercedesModels;
     } else if (make === "BMW") {
-        modelInfo = bmwModels;
+        return bmwModels;
     } else if (make === "Tesla") {
-        modelInfo = teslaModels;
+        return teslaModels;
     }
-    return modelInfo;
+
 }
 
 
@@ -160,19 +169,24 @@ const button = document.querySelector('.btn');
 button.addEventListener('click', showTotalAmount);
 
 function showTotalAmount() {
-
     const amount = document.querySelector('.showTotal');
+
+    const modelSelected = document.querySelector('#model').value;
+    const yearSelected = document.querySelector('#year').value;
+    const mileageSelected = document.querySelector('#mileage').value;
+    const colorSelected = document.querySelector('#color').value;
+
+
     if (document.querySelector('#color').value === "") {
-        alert('hey');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong! Please select all fields',
+
+        });
     } else {
+
+        //alert(carYear[yearSelected][1]);
         amount.style.display = "block";
     }
-}
-
-function isValidSelection(info) {
-    return info.value === brandSelect || modelSelected || yearSelected || mileageSelected || colorSelected;
-}
-
-function isFormValid(brandSelect, modelSelected, yearSelected, mileageSelected, colorSelected) {
-    return isValidSelection(brandSelect) && isValidSelection(modelSelected) && isValidSelection(mileageSelected) && isValidSelection(colorSelected)
 }
