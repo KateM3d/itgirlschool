@@ -1,0 +1,26 @@
+body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(168, 246, 255, 0.9948354341736695) 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 20vw;
+    height: 40vh;
+    border: none;
+    border-radius: 50%;
+    margin-top: 20vh;
+    color: #fff;
+    font-size: 50px;
+    background-color: red;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
