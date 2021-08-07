@@ -16,10 +16,10 @@
 
 
     <div class="container">
-        <form>
+        <form onsubmit="return false">
             <div class="input">
-                <select class="select" id="brand">
-                    <option value="" selected disabled hiden>Make</option>
+                <select class="select" id="brand" name="make">
+                    <option  selected disabled hiden>Make</option>
                     <option value="Nisan">Nisan</option>
                     <option value="Toyota">Toyota</option>
                     <option value="Honda">Honda</option>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="input">
-                <select class="select" disabled>
+                <select class="select" disabled id="model">
                     <option value="">Model</option>
                 </select>
             </div>
