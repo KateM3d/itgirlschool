@@ -1,5 +1,5 @@
 const make = ["Nisan", "Toyota", "Honda", "Mercedes", "BMW", "Tesla"];
-const nisanModels = ["Versa", "sentra", "Rogue", "Murano"];
+const nisanModels = ["Versa", "Sentra", "Rogue", "Murano"];
 const toyotaModels = ["Yaris", "Corolla", "Camri", "Rav4"];
 const hondaModels = ["Accord", "Civic", "CR-V", "Pilot"];
 const mercedesModels = ["E-Class", "GLE", "A-Class", "G-Class"];
@@ -33,6 +33,7 @@ function showModel() {
         modelSelected.appendChild(option);
         console.log(option)
     })
+    modelSelected.disabled = false;
 
 
 
