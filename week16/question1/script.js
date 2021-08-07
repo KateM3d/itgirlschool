@@ -4,11 +4,12 @@ function sumInput() {
     for (;;) {
 
         let value = +prompt("Please enter number", '');
-        result.push(+value);
+
         if (!value) break;
+        result.push(+value);
         sum += value;
     }
-    result.pop();
+    // result.pop();
     alert(result.sort())
     alert('Total: ' + sum);
 }
