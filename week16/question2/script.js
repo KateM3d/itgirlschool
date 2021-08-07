@@ -44,6 +44,22 @@ const carYear = [
 ];
 
 
+
+const carMileage = [
+    ["0 km/hr", 20000],
+    ["less than 50K km/hr", 15000],
+    ["50K < 80K", 10000],
+    ["more than 100K", 5000]
+];
+
+const carColor = [
+    ["White", 500],
+    ["Black", 500],
+    ["Red", 1000],
+    ["Silver", 700],
+    ["Green", 1500]
+];
+
 const brandSelect = document.querySelector('#brand');
 // console.log(brandSelect.value)
 
@@ -78,9 +94,62 @@ function showModel() {
 
 }
 
+function showYear() {
+    const yearsOptions = carYear.map(year => {
+        return year;
+    })
+
+    // console.log(yearsOptions);
+
+    const yearSelected = document.querySelector('#year');
+
+    yearsOptions.forEach(item => {
+        let option = document.createElement('option');
+        option.value = item[0];
+        option.innerText = item[0];
+        yearSelected.appendChild(option);
+        // console.log(option)
+    })
+    yearSelected.disabled = false;
+
+    yearSelected.addEventListener('change', showMileage);
+}
 
 
+function showMileage() {
+    const mileageOptions = carMileage.map(mileage => {
+        return mileage;
+    })
+    const mileageSelected = document.querySelector('#mileage');
 
+    mileageOptions.forEach(item => {
+        let option = document.createElement('option');
+        option.value = item[0];
+        option.innerText = item[0];
+        mileageSelected.appendChild(option);
+
+    })
+    mileageSelected.disabled = false;
+
+    mileageSelected.addEventListener('change', showColor);
+
+}
+
+function showColor() {
+    const colorOptions = carColor.map(color => {
+        return color;
+    })
+    const colorSelected = document.querySelector('#color');
+
+    colorOptions.forEach(item => {
+        let option = document.createElement('option');
+        option.value = item[0];
+        option.innerText = item[0];
+        colorSelected.appendChild(option);
+
+    })
+    colorSelected.disabled = false;
+}
 
 function getModelByBrand(make) {
     let modelInfo = [];
@@ -98,24 +167,4 @@ function getModelByBrand(make) {
         modelInfo = teslaModels;
     }
     return modelInfo;
-}
-
-function showYear() {
-    const yearsOptions = carYear.map(year => {
-        return year;
-    })
-
-    console.log(yearsOptions);
-
-    const years = document.querySelector('#year');
-
-    yearsOptions.forEach(item => {
-        let option = document.createElement('option');
-        option.value = item[0];
-        option.innerText = item[0];
-        years.appendChild(option);
-        // console.log(option)
-    })
-    years.disabled = false;
-    console.log(years)
 }
