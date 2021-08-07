@@ -1,0 +1,36 @@
+body {
+    background-image: url(car.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin: 20px;
+}
+
+.select,
+.btn {
+    width: 250px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+}
+
+.btn {
+    margin: 20px;
+    background-color: yellow;
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
