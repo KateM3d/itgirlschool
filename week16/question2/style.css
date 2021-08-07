@@ -14,7 +14,8 @@ body {
 }
 
 .select,
-.btn {
+.btn,
+.showTotal {
     width: 250px;
     height: 40px;
     border: 2px solid black;
@@ -23,7 +24,8 @@ body {
     padding: 10px;
 }
 
-.btn {
+.btn,
+.showTotal {
     margin: 20px;
     background-color: yellow;
     color: black;
@@ -33,4 +35,10 @@ body {
 
 .btn:hover {
     cursor: pointer;
+}
+
+.showTotal {
+    display: none;
+    background-color: brown;
+    color: white;
 }
