@@ -1,10 +1,47 @@
 const make = ["Nisan", "Toyota", "Honda", "Mercedes", "BMW", "Tesla"];
-const nisanModels = ["Versa", "Sentra", "Rogue", "Murano"];
-const toyotaModels = ["Yaris", "Corolla", "Camri", "Rav4"];
-const hondaModels = ["Accord", "Civic", "CR-V", "Pilot"];
-const mercedesModels = ["E-Class", "GLE", "A-Class", "G-Class"];
-const bmwModels = ["X6", "X5", "X3", "X1"];
-const teslaModels = ["Model 3", "Model Y", "Model X", "Roadster"];
+const nisanModels = [
+    ["Versa", 20000],
+    ["Sentra", 25000],
+    ["Rogue", 40000],
+    ["Murano", 38000]
+];
+const toyotaModels = [
+    ["Yaris", 25000],
+    ["Corolla", 35000],
+    ["Camri", 40000],
+    ["Rav4", 50000]
+];
+const hondaModels = [
+    ["Accord", 30000],
+    ["Civic", 30000],
+    ["CR-V", 35000],
+    ["Pilot", 50000]
+];
+const mercedesModels = [
+    ["E-Class", 50000],
+    ["GLE", 60000],
+    ["A-Class", 80000],
+    ["G-Class", 80000]
+];
+const bmwModels = [
+    ["X6", 50000],
+    ["X5", 65000],
+    ["X3", 70000],
+    ["X1", 100000]
+];
+const teslaModels = [
+    ["Model 3", 120000],
+    ["Model Y", 130000],
+    ["Model X", 150000],
+    ["Roadster", 200000]
+];
+
+const carYear = [
+    [2018, 5000],
+    [2019, 6000],
+    [2020, 7000],
+    [2021, 8000]
+];
 
 
 const brandSelect = document.querySelector('#brand');
@@ -24,22 +61,25 @@ function showModel() {
         // console.log(carModelItems);
 
     const modelSelected = document.querySelector('#model');
-    modelSelected.innerHTML = "";
+    // modelSelected.innerHTML = "";
 
     carModelItems.forEach(item => {
         let option = document.createElement('option');
-        option.value = item;
-        option.innerText = item;
+        option.value = item[0];
+        option.innerText = item[0];
         modelSelected.appendChild(option);
-        console.log(option)
+        // console.log(option)
     })
     modelSelected.disabled = false;
 
-
-
+    // select year
+    modelSelected.addEventListener('change', showYear);
 
 
 }
+
+
+
 
 
 function getModelByBrand(make) {
@@ -60,50 +100,22 @@ function getModelByBrand(make) {
     return modelInfo;
 }
 
+function showYear() {
+    const yearsOptions = carYear.map(year => {
+        return year;
+    })
 
+    console.log(yearsOptions);
 
+    const years = document.querySelector('#year');
 
-// const CAR_BRANDS = ["audi", "honda", "mercedes", "bmw"];
-// const AUDI_MODELS = [["a1", 10000], ["a2", 20000], ["a3", 30000]];
-// const HONDA_MODELS = [["accord", 20000], ["acty", 25000], ["civic", 30300]];
-// const MERCEDES_MODELS = [["a-class", 100000], ["b-class", 150000], ["c-class", 200000]];
-// const BMW_MODELS = [["1_series", 30000], ["2_series", 40000], ["3_series", 50000]];
-
-// const carBrandSelect = document.querySelector(".car-brand");
-// carBrandSelect.addEventListener("change", (e) => {
-//   const currentSelection = e.currentTarget.value;
-//   const doesBrandExist = CAR_BRANDS.some(brand => brand === currentSelection);
-//   if(!doesBrandExist) return;
-
-//   const carModelsData = getCarModelDataByBrand(currentSelection);
-//   const carModelsNames = carModelsData.map(carData => carData[0]);
-
-//   const modelsSelect = document.querySelector(".car-model");
-//   modelsSelect.innerHTML = "";
-//   carModelsNames.forEach(model => {
-//     const newOption = document.createElement("option");
-//     newOption.value = model;
-//     newOption.innerText = model;
-//     modelsSelect.appendChild(newOption);
-//   });
-//   modelsSelect.disabled = false;
-// });
-
-// document.getElementById("calcCar").addEventListener("click", () => {
-//   const carBrand = document.querySelector(".car-brand").value;
-//   const carModel = document.querySelector(".car-model").value;
-
-//   const carModelData = getCarModelDataByBrand(carBrand);
-//   const chosenCarModelData = carModelData.find(carData => carData[0] === carModel);
-//   document.getElementById("price").innerHTML = chosenCarModelData[1];
-
-// });
-
-// function getCarModelDataByBrand(brand) {
-//   let carModelData = [];
-//   if(brand === "audi") carModelData = AUDI_MODELS;
-//   else if(brand === "honda") carModelData = HONDA_MODELS;
-//   else if(brand === "mercedes") carModelData = MERCEDES_MODELS;
-//   else if(brand === "bmw") carModelData = BMW_MODELS;
-//   return carModelData;
-// }
+    yearsOptions.forEach(item => {
+        let option = document.createElement('option');
+        option.value = item[0];
+        option.innerText = item[0];
+        years.appendChild(option);
+        // console.log(option)
+    })
+    years.disabled = false;
+    console.log(years)
+}
