@@ -14,10 +14,30 @@ brandSelect.addEventListener('change', showModel);
 
 function showModel() {
 
-
     const carModel = getModelByBrand(brandSelect.value);
 
-    console.log(carModel);
+    // console.log(carModel);
+
+    const carModelItems = carModel.map(item => {
+            return item;
+        })
+        // console.log(carModelItems);
+
+    const modelSelected = document.querySelector('#model');
+    modelSelected.innerHTML = "";
+
+    carModelItems.forEach(item => {
+        let option = document.createElement('option');
+        option.value = item;
+        option.innerText = item;
+        modelSelected.appendChild(option);
+        console.log(option)
+    })
+
+
+
+
+
 }
 
 
@@ -38,37 +58,6 @@ function getModelByBrand(make) {
     }
     return modelInfo;
 }
-
-
-
-// function showModel(e) {
-//     e.preventDefault();
-//     const currentSelection = e.currentTarget.Value;
-//     const carModelsData = getModelByBrand(currentSelection);
-//     //creating new fuction that will be getting names of the models according to the selection
-//     function getModelByBrand(make) {
-//         let modelInfo = [];
-//         if (make === "Nisan") {
-//             modelInfo = nisanModels;
-//         } else if (make === "Toyota") {
-//             modelInfo = toyotaModels;
-//         } else if (make === "Honda") {
-//             modelInfo = hondaModels;
-//         } else if (make === "Mercedes") {
-//             modelInfo = mercedesModels;
-//         } else if (make === "BMW") {
-//             modelInfo = bmwModels;
-//         } else if (make === "Tesla") {
-//             modelInfo = teslaModels;
-//         }
-//         return modelInfo;
-//     }
-//     console.log(carModelsData)
-//     getModelByBrand()
-
-// }
-
-
 
 
 
