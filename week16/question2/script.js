@@ -79,13 +79,15 @@ function showModel() {
     const modelSelected = document.querySelector('#model');
     // modelSelected.innerHTML = "";
 
-    carModelItems.forEach(item => {
-        let option = document.createElement('option');
-        option.value = item[0];
-        option.innerText = item[0];
-        modelSelected.appendChild(option);
-        // console.log(option)
-    })
+    // carModelItems.forEach(item => {
+    //     let option = document.createElement('option');
+    //     option.value = item[0];
+    //     option.innerText = item[0];
+    //     modelSelected.appendChild(option);
+    //     // console.log(option)
+    // })
+
+    createOptions(carModelItems, modelSelected);
     modelSelected.disabled = false;
 
     // select year
@@ -103,13 +105,16 @@ function showYear() {
 
     const yearSelected = document.querySelector('#year');
 
-    yearsOptions.forEach(item => {
-        let option = document.createElement('option');
-        option.value = item[0];
-        option.innerText = item[0];
-        yearSelected.appendChild(option);
-        // console.log(option)
-    })
+    // yearsOptions.forEach(item => {
+    //     let option = document.createElement('option');
+    //     option.value = item[0];
+    //     option.innerText = item[0];
+    //     yearSelected.appendChild(option);
+    //     // console.log(option)
+    // })
+
+    createOptions(yearsOptions, yearSelected);
+
     yearSelected.disabled = false;
 
     yearSelected.addEventListener('change', showMileage);
@@ -122,13 +127,15 @@ function showMileage() {
     })
     const mileageSelected = document.querySelector('#mileage');
 
-    mileageOptions.forEach(item => {
-        let option = document.createElement('option');
-        option.value = item[0];
-        option.innerText = item[0];
-        mileageSelected.appendChild(option);
+    // mileageOptions.forEach(item => {
+    //     let option = document.createElement('option');
+    //     option.value = item[0];
+    //     option.innerText = item[0];
+    //     mileageSelected.appendChild(option);
 
-    })
+    // })
+
+    createOptions(mileageOptions, mileageSelected);
     mileageSelected.disabled = false;
 
     mileageSelected.addEventListener('change', showColor);
@@ -141,14 +148,27 @@ function showColor() {
     })
     const colorSelected = document.querySelector('#color');
 
-    colorOptions.forEach(item => {
+    // colorOptions.forEach(item => {
+    //     let option = document.createElement('option');
+    //     option.value = item[0];
+    //     option.innerText = item[0];
+    //     colorSelected.appendChild(option);
+
+    // })
+    createOptions(colorOptions, colorSelected);
+
+    colorSelected.disabled = false;
+}
+
+
+function createOptions(id, idSelected) {
+    id.forEach(item => {
         let option = document.createElement('option');
         option.value = item[0];
         option.innerText = item[0];
-        colorSelected.appendChild(option);
+        idSelected.appendChild(option);
 
     })
-    colorSelected.disabled = false;
 }
 
 function getModelByBrand(make) {
