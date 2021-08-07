@@ -77,15 +77,7 @@ function showModel() {
         // console.log(carModelItems);
 
     const modelSelected = document.querySelector('#model');
-    // modelSelected.innerHTML = "";
 
-    // carModelItems.forEach(item => {
-    //     let option = document.createElement('option');
-    //     option.value = item[0];
-    //     option.innerText = item[0];
-    //     modelSelected.appendChild(option);
-    //     // console.log(option)
-    // })
 
     createOptions(carModelItems, modelSelected);
     modelSelected.disabled = false;
@@ -100,23 +92,9 @@ function showYear() {
     const yearsOptions = carYear.map(year => {
         return year;
     })
-
-    // console.log(yearsOptions);
-
     const yearSelected = document.querySelector('#year');
-
-    // yearsOptions.forEach(item => {
-    //     let option = document.createElement('option');
-    //     option.value = item[0];
-    //     option.innerText = item[0];
-    //     yearSelected.appendChild(option);
-    //     // console.log(option)
-    // })
-
     createOptions(yearsOptions, yearSelected);
-
     yearSelected.disabled = false;
-
     yearSelected.addEventListener('change', showMileage);
 }
 
@@ -126,18 +104,8 @@ function showMileage() {
         return mileage;
     })
     const mileageSelected = document.querySelector('#mileage');
-
-    // mileageOptions.forEach(item => {
-    //     let option = document.createElement('option');
-    //     option.value = item[0];
-    //     option.innerText = item[0];
-    //     mileageSelected.appendChild(option);
-
-    // })
-
     createOptions(mileageOptions, mileageSelected);
     mileageSelected.disabled = false;
-
     mileageSelected.addEventListener('change', showColor);
 
 }
@@ -147,17 +115,16 @@ function showColor() {
         return color;
     })
     const colorSelected = document.querySelector('#color');
-
-    // colorOptions.forEach(item => {
-    //     let option = document.createElement('option');
-    //     option.value = item[0];
-    //     option.innerText = item[0];
-    //     colorSelected.appendChild(option);
-
-    // })
     createOptions(colorOptions, colorSelected);
+    // if (modelSelected.value === "Versa") {
+    //     const newColorOptions = carColor.filter(color => color.length >= 2);
+    //     console.log(newColorOptions)
+    // }
 
     colorSelected.disabled = false;
+
+
+
 }
 
 
@@ -167,7 +134,6 @@ function createOptions(id, idSelected) {
         option.value = item[0];
         option.innerText = item[0];
         idSelected.appendChild(option);
-
     })
 }
 
@@ -187,4 +153,26 @@ function getModelByBrand(make) {
         modelInfo = teslaModels;
     }
     return modelInfo;
+}
+
+
+const button = document.querySelector('.btn');
+button.addEventListener('click', showTotalAmount);
+
+function showTotalAmount() {
+
+    const amount = document.querySelector('.showTotal');
+    if (document.querySelector('#color').value === "") {
+        alert('hey');
+    } else {
+        amount.style.display = "block";
+    }
+}
+
+function isValidSelection(info) {
+    return info.value === brandSelect || modelSelected || yearSelected || mileageSelected || colorSelected;
+}
+
+function isFormValid(brandSelect, modelSelected, yearSelected, mileageSelected, colorSelected) {
+    return isValidSelection(brandSelect) && isValidSelection(modelSelected) && isValidSelection(mileageSelected) && isValidSelection(colorSelected)
 }
