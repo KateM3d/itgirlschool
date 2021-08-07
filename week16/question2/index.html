@@ -19,7 +19,7 @@
         <form onsubmit="return false">
             <div class="input">
                 <select class="select" id="brand" name="make">
-                    <option  selected disabled hiden>Make</option>
+                    <option  selected disabled hidden>Make</option>
                     <option value="Nisan">Nisan</option>
                     <option value="Toyota">Toyota</option>
                     <option value="Honda">Honda</option>
@@ -32,28 +32,33 @@
 
             <div class="input">
                 <select class="select" disabled id="model" name="model">
-                    <option value="">Model</option>
+                    <option value="Model"  hidden>Model</option>
                 </select>
             </div>
             <div class="input">
                 <select class="select" disabled id="year" name="year">
-                    <option value="">Year</option>
+                    <option value="" hidden>Year</option>
                 </select>
             </div>
 
             <div class="input">
                 <select class="select" disabled id="mileage" name="mileage">
-                    <option value="">Mileage</option>
+                    <option value="" hidden>Mileage</option>
                 </select>
             </div>
             <div class="input">
                 <select class="select" disabled id="color" name="color">
-                    <option value="">Color</option>
+                    <option value="" hidden>Color</option>
                 </select>
             </div>
         </form>
         <div class="calculate">
             <button class="btn">Calculate</button>
+        </div>
+
+        <div class="showTotal">
+            <p>Your Total:</p>
+            <span id="total"></span>
         </div>
 
 
