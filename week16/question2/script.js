@@ -1,3 +1,9 @@
+const brandSelect = document.querySelector('#brand');
+const modelSelected = document.querySelector('#model');
+const yearSelected = document.querySelector('#year');
+const mileageSelected = document.querySelector('#mileage');
+const colorSelected = document.querySelector('#color');
+
 const make = ["Nisan", "Toyota", "Honda", "Mercedes", "BMW", "Tesla"];
 const nisanModels = [
     ["Versa", 20000],
@@ -43,9 +49,6 @@ const carYear = [
     [2021, 8000]
 ];
 
-const priceComponents = []
-
-
 
 const carMileage = [
     ["0 km/hr", 20000],
@@ -62,42 +65,29 @@ const carColor = [
     ["Green", 1500]
 ];
 
-const brandSelect = document.querySelector('#brand');
-// console.log(brandSelect.value)
 
 brandSelect.addEventListener('change', showModel);
 
 function showModel() {
 
     const carModel = getModelByBrand(brandSelect.value);
-
-    // console.log(carModel);
-
     const carModelItems = carModel.map(item => {
-            return item;
-        })
-        // console.log(carModelItems);
-
-    const modelSelected = document.querySelector('#model');
-
+        return item;
+    })
 
     createOptions(carModelItems, modelSelected);
     modelSelected.disabled = false;
-
-    // select year
     modelSelected.addEventListener('change', showYear);
-
 }
 
 function showYear() {
     const yearsOptions = carYear.map(year => {
         return year;
     })
-    const yearSelected = document.querySelector('#year');
+
     createOptions(yearsOptions, yearSelected);
     yearSelected.disabled = false;
     yearSelected.addEventListener('change', showMileage);
-
 }
 
 
@@ -105,7 +95,7 @@ function showMileage() {
     const mileageOptions = carMileage.map(mileage => {
         return mileage;
     })
-    const mileageSelected = document.querySelector('#mileage');
+
     createOptions(mileageOptions, mileageSelected);
     mileageSelected.disabled = false;
     mileageSelected.addEventListener('change', showColor);
@@ -116,17 +106,9 @@ function showColor() {
     const colorOptions = carColor.map(color => {
         return color;
     })
-    const colorSelected = document.querySelector('#color');
+
     createOptions(colorOptions, colorSelected);
-    // if (modelSelected.value === "Versa") {
-    //     const newColorOptions = carColor.filter(color => color.length >= 2);
-    //     console.log(newColorOptions)
-    // }
-
     colorSelected.disabled = false;
-
-
-
 }
 
 
@@ -170,14 +152,10 @@ button.addEventListener('click', showTotalAmount);
 
 function showTotalAmount() {
     const amount = document.querySelector('.showTotal');
+    let chosenModel = modelSelected.value;
+    console.log(chosenModel);
 
-    const modelSelected = document.querySelector('#model').value;
-    const yearSelected = document.querySelector('#year').value;
-    const mileageSelected = document.querySelector('#mileage').value;
-    const colorSelected = document.querySelector('#color').value;
-
-
-    if (document.querySelector('#color').value === "") {
+    if (colorSelected.value === "") {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -185,8 +163,44 @@ function showTotalAmount() {
 
         });
     } else {
+        let modelData;
+        switch (brandSelect.value) {
+            case "Nisan":
+                modelData = nisanModels;
+                break;
+            case "Toyota":
+                modelData = toyotaModels;
+                break;
+            case "Honda":
+                modelData = hondaModels;
+                break;
+            case "Mercedes":
+                modelData = mercedesModels;
+                break;
+            case "BMW":
+                modelData = bmwModels;
+                break;
+            case "Tesla":
+                modelData = teslaModels;
+                break;
+        }
 
-        //alert(carYear[yearSelected][1]);
+        let modelPrice = getPriceFromSelection(modelData, modelSelected);
+        let yearPrice = getPriceFromSelection(carYear, yearSelected);
+        let mileagePrice = getPriceFromSelection(carMileage, mileageSelected);
+        let colorPrice = getPriceFromSelection(carColor, colorSelected);
+
+        let sum = modelPrice + yearPrice + mileagePrice + colorPrice;
+        document.querySelector('#total').textContent = sum;
+
         amount.style.display = "block";
+    }
+}
+
+function getPriceFromSelection(selectionArray, selectedValue) {
+    for (let i = 0; i < selectionArray.length; i++) {
+        if (selectionArray[i][0] == selectedValue.value) {
+            return selectionArray[i][1];
+        }
     }
 }
