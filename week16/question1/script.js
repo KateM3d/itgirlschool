@@ -10,7 +10,13 @@ function sumInput() {
         sum += value;
     }
     // result.pop();
-    alert(result.sort())
+    alert(result.sort(function sortInput(a, b) {
+        return (a - b)
+    }))
     alert('Total: ' + sum);
 }
 sumInput()
+
+// functipn sortInput(a, b) {
+//     return (a - b)
+// }
