@@ -6,36 +6,42 @@ const colorSelected = document.querySelector('#color');
 
 const make = ["Nisan", "Toyota", "Honda", "Mercedes", "BMW", "Tesla"];
 const nisanModels = [
+    ["Select"],
     ["Versa", 20000],
     ["Sentra", 25000],
     ["Rogue", 40000],
     ["Murano", 38000]
 ];
 const toyotaModels = [
+    ["Select"],
     ["Yaris", 25000],
     ["Corolla", 35000],
     ["Camri", 40000],
     ["Rav4", 50000]
 ];
 const hondaModels = [
+    ["Select"],
     ["Accord", 30000],
     ["Civic", 30000],
     ["CR-V", 35000],
     ["Pilot", 50000]
 ];
 const mercedesModels = [
+    ["Select"],
     ["E-Class", 50000],
     ["GLE", 60000],
     ["A-Class", 80000],
     ["G-Class", 80000]
 ];
 const bmwModels = [
+    ["Select"],
     ["X6", 50000],
     ["X5", 65000],
     ["X3", 70000],
     ["X1", 100000]
 ];
 const teslaModels = [
+    ["Select"],
     ["Model 3", 120000],
     ["Model Y", 130000],
     ["Model X", 150000],
@@ -43,6 +49,7 @@ const teslaModels = [
 ];
 
 const carYear = [
+    ["Select"],
     [2018, 5000],
     [2019, 6000],
     [2020, 7000],
@@ -51,6 +58,7 @@ const carYear = [
 
 
 const carMileage = [
+    ["Select"],
     ["0 km/hr", 20000],
     ["less than 50K km/hr", 15000],
     ["50K < 80K", 10000],
@@ -58,6 +66,7 @@ const carMileage = [
 ];
 
 const carColor = [
+    ["Select"],
     ["White", 500],
     ["Black", 500],
     ["Red", 1000],
@@ -71,12 +80,18 @@ brandSelect.addEventListener('change', showModel);
 function showModel() {
 
     const carModel = getModelByBrand(brandSelect.value);
+
+
     const carModelItems = carModel.map(item => {
         return item;
     })
 
     createOptions(carModelItems, modelSelected);
+
     modelSelected.disabled = false;
+
+    defaultOptionSelection();
+
     modelSelected.addEventListener('change', showYear);
 }
 
@@ -87,6 +102,8 @@ function showYear() {
 
     createOptions(yearsOptions, yearSelected);
     yearSelected.disabled = false;
+
+    defaultOptionSelection();
     yearSelected.addEventListener('change', showMileage);
 }
 
@@ -98,6 +115,7 @@ function showMileage() {
 
     createOptions(mileageOptions, mileageSelected);
     mileageSelected.disabled = false;
+    defaultOptionSelection();
     mileageSelected.addEventListener('change', showColor);
 
 }
@@ -108,7 +126,10 @@ function showColor() {
     })
 
     createOptions(colorOptions, colorSelected);
+
+
     colorSelected.disabled = false;
+    defaultOptionSelection();
 }
 
 
@@ -119,12 +140,21 @@ function createOptions(id, idSelected) {
     }
 
     id.forEach(item => {
+
         let option = document.createElement('option');
-        option.value = item[0];
+
         option.innerText = item[0];
+        option.value = item[0];
+
         idSelected.appendChild(option);
     })
 
+}
+
+function defaultOptionSelection() {
+    let defaultOption = document.createElement('option');
+    defaultOption.innerText = "Select";
+    defaultOption.value = "Select";
 }
 
 
