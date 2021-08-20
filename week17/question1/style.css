@@ -24,6 +24,11 @@ body {
     height: 30px;
 }
 
+.divInput {
+    display: flex;
+    justify-content: space-around;
+}
+
 .btn {
     margin: 40px;
     padding: 10px;
