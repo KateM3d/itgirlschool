@@ -6,42 +6,42 @@ const colorSelected = document.querySelector('#color');
 
 const make = ["Nisan", "Toyota", "Honda", "Mercedes", "BMW", "Tesla"];
 const nisanModels = [
-    ["Select"],
+
     ["Versa", 20000],
     ["Sentra", 25000],
     ["Rogue", 40000],
     ["Murano", 38000]
 ];
 const toyotaModels = [
-    ["Select"],
+
     ["Yaris", 25000],
     ["Corolla", 35000],
     ["Camri", 40000],
     ["Rav4", 50000]
 ];
 const hondaModels = [
-    ["Select"],
+
     ["Accord", 30000],
     ["Civic", 30000],
     ["CR-V", 35000],
     ["Pilot", 50000]
 ];
 const mercedesModels = [
-    ["Select"],
+
     ["E-Class", 50000],
     ["GLE", 60000],
     ["A-Class", 80000],
     ["G-Class", 80000]
 ];
 const bmwModels = [
-    ["Select"],
+
     ["X6", 50000],
     ["X5", 65000],
     ["X3", 70000],
     ["X1", 100000]
 ];
 const teslaModels = [
-    ["Select"],
+
     ["Model 3", 120000],
     ["Model Y", 130000],
     ["Model X", 150000],
