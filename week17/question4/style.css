@@ -1,0 +1,46 @@
+body {
+    background-color: #F6D167;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clickBtn {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#par {
+    padding: 20px;
+    border: 2px solid #DF2E2E;
+    width: 750px;
+    height: 50px;
+    background-color: #FFF7AE;
+    font-size: 40px;
+}
+
+#btn {
+    background-color: #297F87;
+    color: #FFF7AE;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.results {
+    display: none;
+}
+
+.res {
+    padding: 10px;
+    border: 2px solid #DF2E2E;
+    width: 250px;
+    height: 20px;
+    background-color: #FFF7AE;
+    font-size: 20px;
+}
