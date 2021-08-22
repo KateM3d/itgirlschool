@@ -17,43 +17,52 @@ const newMessages = document.querySelector('.newMessages');
 btn.addEventListener('click', entryCheck);
 
 
-
 function entryCheck() {
     const message = document.createElement('li');
 
 
-    if (inputField.value === '') {
+    if (inputField.value.trim().length === 0) {
+        inputField.value = '';
         alert('Please enter your message');
     } else {
-
-        message.innerText = `New Message: ${inputField.value}`;
-        message.classList.add('toAddMessage');
         checkSpam(message);
-        newMessages.appendChild(message);
-        inputField.value = '';
+        // message.innerText = `New Message: ${inputField.value}`;
+        // message.classList.add('toAddMessage');
+
+        // newMessages.appendChild(message);
+        // inputField.value = '';
     }
-
-
-
 }
 
 
 function checkSpam(message) {
-    let messageContent = message.innerText;
+
+    let messageContent = inputField.value;
+
+    // let messageContent = message.innerText;
     let newInputField = messageContent.replace('viagra', '***');
     if (messageContent.includes('viagra')) {
         // alert('yes');
-        messageContent = `New Message: ${newInputField}`;
+        message.innerText = `New Message: ${newInputField}`;
+        message.classList.add('toAddMessage');
+
+        newMessages.appendChild(message);
+        inputField.value = '';
         alert(newInputField)
 
     } else {
         alert('no');
-    }
+        message.innerText = `New Message: ${inputField.value}`;
+        message.classList.add('toAddMessage');
 
-    //     messageContent.replace(/viagra/ig, "***") : (message.innerText = `New Message: ${inputField.value}`);
-    // message.replace(/xxx/ig, "***");
+        newMessages.appendChild(message);
+        inputField.value = '';
+    }
 
 }
 
+
+//     messageContent.replace(/viagra/ig, "***") : (message.innerText = `New Message: ${inputField.value}`);
+// message.replace(/xxx/ig, "***");
 
 // || messageContent.includes(/xxx/i)
