@@ -6,13 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
 
-    <input type="text">
-    <button class="btn">click me</button>
+    <h1>Tell me about your Pet</h1>
+    <div class="container">
+        <form onsubmit="return false">
+            <div id="formFields">
+
+                <input type="text" id="petsName" placeholder="What is your pet name?">
+
+                <input type="text" id="ownersName" placeholder="please enter your name">
+
+
+                <input type="tel" id="ownersPhone" placeholder="Your phone number">
+                <select name="chooseBreed" id="breed">
+            <option value="breed" selected disabled >Breed</option>
+            <option value="persian">Persian</option>
+            <option value="bengal">Bengal</option>
+            <option value="maineCoon">Maine Coon</option>
+            <option value="scottishFold">Scottish Fold</option>
+            <option value="britishShorthair">British Shorthair</option>
+            <option value="munchkin">Munchkin</option>
+            </select>
+
+                <p>Food Preferences:</p>
+                <div id="chooseOptions">
+                    <input type="checkbox">Wet food
+                    <input type="checkbox">Dry food
+                    <input type="checkbox">Natural food
+                </div>
+
+                <p>Gender:</p>
+                <div id="chooseOptions">
+                    <input type="radio" name="gender">male
+                    <input type="radio" name="gender">female
+                </div>
+
+                <textarea name="comment" id="comment" placeholder="Please leave your comment here"></textarea>
+            </div>
+        </form>
+        <div id="loadPhoto">
+            <input type="file">
+            <button id="btn">Submit</button>
+        </div>
+    </div>
 
 
 
