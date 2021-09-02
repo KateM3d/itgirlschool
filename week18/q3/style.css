@@ -1,0 +1,53 @@
+body {
+    background-color: wheat;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #535204;
+}
+
+.container {
+    display: flex;
+    margin-bottom: 3px;
+    margin: auto;
+    border: 3px solid #62760C;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+}
+
+.inputText {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.inputMessage {
+    align-self: center;
+    width: 800px;
+    height: 100px;
+    border: 3px solid #62760C;
+}
+
+.btn {
+    width: 808px;
+    height: 50px;
+    align-self: center;
+    background-color: #CDB30C;
+    color: white;
+    font-size: 30px;
+    border: 2px solid #62760C;
+}
+
+li {
+    font-size: 20px;
+    color: #62760C;
+    padding: 10px;
+}
+
+.toAddMessage {
+    display: flex;
+    flex-direction: column;
+}
