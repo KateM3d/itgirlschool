@@ -20,7 +20,7 @@ h1 {
 #formFields {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 300px;
 }
 
 input,
@@ -83,4 +83,8 @@ input {
     font-weight: bolder;
     font-size: 15px;
     color: white;
+}
+
+input:required {
+    border: 2px solid green;
 }
