@@ -31,6 +31,13 @@ h1 {
     border: 3px solid #62760C;
 }
 
+.inputName {
+    align-self: center;
+    width: 800px;
+    height: 40px;
+    border: 3px solid #62760C;
+}
+
 .btn {
     width: 808px;
     height: 50px;
