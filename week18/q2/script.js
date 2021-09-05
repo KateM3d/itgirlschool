@@ -16,6 +16,8 @@ function check() {
 
     if (!isFormValid(firstName, midName, lastName, email, password)) {
         message.innerHTML += 'Oops! your are missing something! <br> Please make sure all the info is provided'
+    } else if (!validateEmail()) {
+        alert("Invalid email entry, please try again")
     } else {
 
         Swal.fire({
@@ -37,4 +39,14 @@ function isValidEntry(info) {
 function isFormValid(firstName, midName, lastName, email, password) {
 
     return isValidEntry(firstName) && isValidEntry(midName) && isValidEntry(lastName) && isValidEntry(email) && isValidEntry(password)
+}
+
+function validateEmail() {
+    let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+    if (email.value.match(mailFormat)) {
+        return true;
+    } else {
+
+        return false;
+    }
 }
