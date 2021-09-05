@@ -31,11 +31,13 @@ h1 {
     border: 3px solid #62760C;
 }
 
-.inputName {
+.inputName,
+.profilePic {
     align-self: center;
     width: 800px;
     height: 40px;
     border: 3px solid #62760C;
+    background-color: white;
 }
 
 .btn {
@@ -57,4 +59,11 @@ li {
 .toAddMessage {
     display: flex;
     flex-direction: column;
+}
+
+.profilePic {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
 }
