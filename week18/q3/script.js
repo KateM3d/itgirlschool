@@ -3,6 +3,7 @@
 const inputField = document.querySelector('.inputMessage');
 const btn = document.querySelector('.btn');
 const newMessages = document.querySelector('.newMessages');
+const inputName = document.querySelector('.inputName');
 let newInputField;
 const badWordsCollection = ['viagra', 'xxx'];
 btn.addEventListener('click', postMessage);
@@ -24,7 +25,7 @@ function postMessage() {
         }
 
         newInputField = inputWords.join(' ');
-        message.innerText = `New Message: ${newInputField}`;
+        message.innerText = `${inputName.value}: ${newInputField}`;
         postCheckedMessage(message, newMessages);
         inputField.value = '';
     }
