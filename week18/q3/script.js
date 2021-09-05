@@ -4,12 +4,30 @@ const inputField = document.querySelector('.inputMessage');
 const btn = document.querySelector('.btn');
 const newMessages = document.querySelector('.newMessages');
 const inputName = document.querySelector('.inputName');
+let profileEmoji = document.querySelectorAll('.avatar');
+
 let newInputField;
 const badWordsCollection = ['viagra', 'xxx'];
+
+
 btn.addEventListener('click', postMessage);
+
+document.addEventListener('DOMContentLoaded', () => {
+    let name = localStorage.getItem('name');
+    let emoji = localStorage.getItem('avatar');
+    if ((name !== null) && (emoji !== null)) {
+        inputName.value = name;
+        selectedEmoji = emoji;
+
+
+    }
+})
+
+
 
 function postMessage() {
 
+    getSelectedEmoji();
     if (inputField.value.trim().length === 0) {
         inputField.value = '';
         alert('Please enter your message');
@@ -17,7 +35,6 @@ function postMessage() {
         let str = inputField.value;
         let trimmedStr = str.trim();
         let inputWords = trimmedStr.trim().replace(/\s+/g, " ").split(' ');
-        console.log(inputWords)
         const message = document.createElement('li');
 
         for (let i = 0; i < badWordsCollection.length; i++) {
@@ -25,11 +42,29 @@ function postMessage() {
         }
 
         newInputField = inputWords.join(' ');
-        message.innerText = `${inputName.value}: ${newInputField}`;
+        let selectedEmoji = getSelectedEmoji();
+        message.innerText = `${selectedEmoji} ${inputName.value}: ${newInputField}`;
         postCheckedMessage(message, newMessages);
         inputField.value = '';
+        if (localStorage.getItem('name') === null || localStorage.getItem('avatar') === null) {
+            localStorage.setItem('name', inputName.value);
+            localStorage.setItem('avatar', profileEmoji);
+        }
+
+
     }
 }
+
+
+function getSelectedEmoji() {
+
+    for (let i = 0; i < profileEmoji.length; i++) {
+        if (profileEmoji[i].checked) {
+            return (profileEmoji[i].value);
+        }
+    }
+}
+
 
 function replaceBadWord(inputWords, badWord) {
     for (let i = 0; i < inputWords.length; i++) {
