@@ -9,15 +9,22 @@
 // console.log(worker.days); //выведет 31
 // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
 
-let worker = {
-    name: 'Ivan',
-    surname: 'Ivanov',
-    rate: 10,
-    days: 31,
+class Worker {
+    constructor(name, surname, rate, days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+
+    }
     getSalary() {
-        return worker.rate * worker.days
+        return this.rate * this.days
+
     }
 }
+
+
+let worker = new Worker('Иван', 'Иванов', 10, 31);
 
 console.log(worker.name);
 console.log(worker.surname);
