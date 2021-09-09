@@ -6,14 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 
 <body>
 
+    <div class="container">
+        <div class="input">
+            <div> <input class="inputField" id="numberOne" placeholder="Enter first number"></div>
+            <div> <input class="inputField" id="numberTwo" placeholder="Enter second number"></div>
+            <input class="resultField" id="result" placeholder="Result">
+
+        </div>
+        <div class="line">
+            <button class="btn plus" type="submit" onClick="CalculatorSatic.Sum()">➕</button>
+            <button class="btn minus" type="submit" onClick='CalculatorSatic.Minus()'>➖</button>
+        </div>
+        <div class="line">
+            <button class="btn divide" type="submit" onClick='CalculatorSatic.Div()'>➗</button>
+            <button class="btn multiply" type="submit" onClick='CalculatorSatic.Mult()'>✖️</button>
 
 
-    <script src="script.js"></script>
+        </div>
+        <div class="clearResult"><button class="btnSmall" id="clear" onclick="clearResult()" type="submit">Clear</div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
