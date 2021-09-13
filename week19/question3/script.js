@@ -8,38 +8,39 @@ class Calculator {
     }
 
     isValidNumber(value) {
-        let isNotEmpty = value.trim().length !== 0;
+        let isNotEmpty = String(value).trim().length !== 0;
         let isNumber = !Number.isNaN(Number(value));
         return isNotEmpty && isNumber;
     }
 
 
-    Sum(num1, num2) {
+    Sum() {
 
-        if (isValidNumber(num1) && isValidNumber(num2)) {
-            return num1 + num2;
+        if (this.isValidNumber(this.firstNumber) && this.isValidNumber(this.secondNumber)) {
+            alert("Numbers only please! XXX");
         } else {
-            alert("Numbers only please!");
+
+            return this.firstNumber + this.secondNumber;
         }
     }
     Minus() {
-        if (isValidNumber(num1) && isValidNumber(num2)) {
-            return num1 - num2;
+        if (isValidNumber(firstNumber) && isValidNumber(secondNumber)) {
+            return firstNumber - secondNumber;
         } else {
             alert("Numbers only please!");
         }
     }
     Mult() {
-        if (isValidNumber(num1) && isValidNumber(num2)) {
-            return num1 * num2;
+        if (isValidNumber(firstNumber) && isValidNumber(secondNumber)) {
+            return firstNumber * secondNumber;
         } else {
             alert("Numbers only please!");
         }
     }
 
     Div() {
-        if (isValidNumber(num1) && isValidNumber(num2)) {
-            return num1 / num2;
+        if (isValidNumber(firstNumber) && isValidNumber(secondNumber)) {
+            return firstNumber / secondNumber;
         } else {
             alert("Numbers only please!");
         }
@@ -47,9 +48,18 @@ class Calculator {
 }
 
 
-let firstNumber = document.querySelector('#numberOne').value;
-let secondNumber = document.querySelector('#numberTwo').value;
-console.log(Calculator.Sum(1, 2))
+let num1 = document.querySelector('#numberOne').value;
+let num2 = document.querySelector('#numberTwo').value;
+let result = document.querySelector('.resultField').value;
+
+let bothNumbers = new Calculator(num1, num2);
+// console.log(firstNumber);
+// console.log(secondNumber)
+
+result.textContent = bothNumbers.Sum();
+
+
+console.log(bothNumbers.Sum())
 
 
 

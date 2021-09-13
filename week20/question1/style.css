@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: black;
+}
+
+.container {
+    background-color: cornsilk;
+    margin: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+}
+
+.text {
+    display: flex;
+    text-align: justify;
+    color: black;
+}
+
+.superheroBase {
+    width: 40%;
+    border: 5px solid black;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(43, 43, 138);
+}
+
+.myPoints {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 20px;
+    margin: auto;
+    justify-content: center;
+}
