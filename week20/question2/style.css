@@ -1,0 +1,40 @@
+body {
+    background-image: url(img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40vh;
+}
+
+.containerPicture {
+    display: none;
+    width: 60vw;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+.btn {
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    align-self: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
