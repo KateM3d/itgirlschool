@@ -1,26 +1,11 @@
 body {
-    background-image: url(img.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background-color: burlywood;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     margin-top: 40vh;
-}
-
-.containerPicture {
-    display: none;
-    width: 60vw;
-    justify-content: center;
-    margin: auto;
-    margin-top: 10vh;
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    background-color: cornsilk;
 }
 
 .btn {
@@ -37,4 +22,9 @@ body {
 
 .btn:hover {
     cursor: pointer;
+}
+
+.par {
+    display: flex;
+    justify-content: center;
 }
