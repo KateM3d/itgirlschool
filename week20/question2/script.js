@@ -1,17 +1,18 @@
 const btn = document.querySelector('.btn');
-const img = document.querySelector('.img');
-const newImg = document.querySelector('.containerPicture');
-
-btn.addEventListener('click', getQuote);
-
-async function getQuote() {
-
-    newImg.style.display = 'block';
+const par = document.querySelector('.par');
 
 
-    let res = await fetch('https://cors-anywhere.herokuapp.com/https://dog.ceo/dog-api/');
-    console.log(result)
+btn.addEventListener('click', getPicture);
 
-    let resReceived = await res.json();
-    console.log(resReceived)
+async function getPicture() {
+
+    const res = await fetch("https://dog.ceo/api/breeds/image/random")
+
+
+    const resReceived = await res.json();
+    showImage(resReceived);
+}
+
+function showImage(resReceived) {
+    par.innerHTML = `<img src="${resReceived.message}" alt="image" width="400px">`
 }
