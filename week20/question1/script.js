@@ -115,16 +115,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
         <h4> Powers: ${hero.superPowers}</h4>
         <h4 class="text"> More: ${hero.moreInfo}</h4>
         <div class="myPoints">
-        <input type="radio" name="points" value="5" class="points">5
-        <input type="radio" name="points" value="4" class="points">4
-        <input type="radio" name="points" value="3" class="points">3
-        <input type="radio" name="points" value="2" class="points">2
+        <input type="checkbox" name="${hero.realName}" value="5" class="points">5
+        <input type="checkbox" name="${hero.realName}" value="4" class="points">4
+        <input type="checkbox" name="${hero.realName}" value="3" class="points">3
+        <input type="checkbox" name="${hero.realName}" value="2" class="points">2
         </div>
         </div>`
 
+        // let totalPoints = document.querySelectorAll('.points');
+        // console.log(totalPoints)
+        // localStorage.setItem('points', checkbox.checked)
+        // let checked = JSON.parse()
+
+
+        // let myResult = localStorage.getItem('points');
+
+        // console.log(myResult)
 
     }
+
+
+
+
     document.querySelector(".container").innerHTML = superheroBaseContent;
+
 
 
 })
