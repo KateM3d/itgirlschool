@@ -1,0 +1,71 @@
+1. Приведите примеры GET-вызовов с параметрами (2-3 возможных адреса URL, можно реальных, можно из головы)?
+
+    *Например,* 
+
+    *www.clothes.com/catalog?category=dress - выбирает одежду категории платья*
+
+    *https://www.ebay.com/sch/i.html?_from=R40&_nkw=handbag&_sacat=0&rt=nc&_udlo=200&_udhi=500 - выбирает сумки стоимостью от 200$ до 500$* 
+
+
+
+https://www.google.com/search?q=tell+me+about+yourself -google 'tell me about yourself' search
+https://www.amazon.ca/s?k=shirts+for+women -shirts for woman
+https://www.amazon.ca/s?k=white+shirts+for+women&crid=28P5QBYG1RAW7&sprefix=shirts+for+women%2Caps%2C324&ref=nb_sb_ss_i_3_16 -white shirts for women
+
+2. Расскажите своими словами, чем отличаются GET и POST-запросы?
+GET способ обращения к серверу  в котором мы передаем информацию через адресную строку. Используется при несекретных данных и работает с малым объемом информации. GET запросы остаются в истории браузера.
+
+B отличии от GET, POST  не дублирует информацию в браузерной строке. Используется для секретних данных, таких как пароль например, и позволяет работать с большим объемом данных. Запросы POST не сохраняются в истории браузера
+
+3. Какой вид запроса лучше использовать для получения отфильтрованного списка товаров? 
+
+GET
+
+4. А какой - для формы регистрации? 
+
+POST (секретные данные, например пароль)
+
+5. Посмотрите на запрос и разберитесь, что он делает и что означают и на что влияют параметры api_key, q, limit, lang? Как сделать так, чтобы запрос возвращал не 25, а 5 картинок? 
+
+    Документация к API находится здесь: [https://developers.giphy.com/explorer](https://developers.giphy.com/explorer) 
+
+    ```jsx
+    https://api.giphy.com/v1/gifs/search?api_key=SET_KEY_HERE&q=cats&limit=25&offset=0&rating=g&lang=en
+
+    ```
+
+    api_key - тут используем полученный ключ, 
+    q -это сайт с гифками, значит говорит какие гифки (гифки кого) выводить, в данном случае котов
+    limit-сколько (колличество) выводить в данном случае 25
+    lang -язык
+
+для 5 картинок:
+https://api.giphy.com/v1/gifs/search?api_key=SET_KEY_HERE&q=cats&limit=5&offset=0&rating=g&lang=en
+
+(меняем limit на 5)
+
+
+6. Как посмотреть заголовки запроса к странице или API?
+
+
+7. Самостоятельно разберитесь, что такое CORS. Приведите пример их включения в запросе `fetch`.
+
+
+8. Что можно писать в параметре заголовков `Content-Type` ?
+
+
+9. Давайте отправим информацию о собачке в API по адресу `localhost/pets/add` 
+
+    ```json
+    JSON с информацией о собаке:
+    {
+    		"breed": "Beagle",
+    		"size": "large",
+    		"color": "orange",
+    		"age": 6
+    	}
+    ```
+
+    Как будет выглядеть `fetch` в таком случае?
+
+10. Изучите статью [https://learn.javascript.ru/promise-basics](https://learn.javascript.ru/promise-basics) и самостоятельно разберитесь, что такое промисы. Напишите в 1-2 предложения, что это такое и приведите пример, где вы уже сталкивались с промисами?
