@@ -46,13 +46,21 @@ https://api.giphy.com/v1/gifs/search?api_key=SET_KEY_HERE&q=cats&limit=5&offset=
 
 
 6. Как посмотреть заголовки запроса к странице или API?
-
+Chrome F12 Dev Tools, вкладка Network:
 
 7. Самостоятельно разберитесь, что такое CORS. Приведите пример их включения в запросе `fetch`.
-
+```
+fetch('http://127.0.0.1:3000/public')
+  .then(response => response.text())
+  .then((result) => {
+    document.body.textContent = result
+  })
+```
 
 8. Что можно писать в параметре заголовков `Content-Type` ?
-
+application/x-www-form-urlencoded, 
+multipart/form-data,
+text/plain
 
 9. Давайте отправим информацию о собачке в API по адресу `localhost/pets/add` 
 
