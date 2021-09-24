@@ -56,7 +56,6 @@ btn.onclick = function(e) {
 }
 
 
-
 function isValidEntry(info) {
     return info.value.trim() !== "";
 }
