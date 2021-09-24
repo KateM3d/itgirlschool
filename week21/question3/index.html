@@ -6,10 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
+
+    <h1>Tell me about your Pet</h1>
+    <div class="container">
+        <form onsubmit="return false">
+            <div id="formFields">
+
+                <input type="text" id="petsName" placeholder="What is your pets name?*" required>
+
+                <input type="text" id="ownersName" placeholder="please enter your name*" required>
+
+
+                <input required type="tel" id="ownersPhone" placeholder="Your phone number*" pattern="/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/" minlength="10" maxlength="20">
+                <select name="chooseBreed" id="breed">
+            <option value="breed" selected disabled >Breed</option>
+            <option value="persian" class="breed">Persian</option>
+            <option value="bengal" class="breed">Bengal</option>
+            <option value="maineCoon" class="breed">Maine Coon</option>
+            <option value="scottishFold" class="breed">Scottish Fold</option>
+            <option value="britishShorthair" class="breed">British Shorthair</option>
+            <option value="munchkin" class="breed">Munchkin</option>
+            </select>
+
+                <p>Food Preferences:</p>
+                <div id="chooseOptions">
+                    <input type="checkbox" class="food">Wet food
+                    <input type="checkbox" class="food">Dry food
+                    <input type="checkbox" class="food">Natural food
+                </div>
+
+                <p>Gender:</p>
+                <div id="chooseOptions">
+                    <input type="radio" name="gender" class="gender">male
+                    <input type="radio" name="gender" class="gender">female
+                </div>
+
+                <textarea name="comment" id="comment" placeholder="Please leave your comment here"></textarea>
+            </div>
+        </form>
+        <div id="loadPhoto">
+            <input type="file" class="photo">
+            <button type="submit" id="btn">Submit</button>
+        </div>
+    </div>
+
 
 
     <script src="script.js"></script>
