@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+}
+
+.conatiner {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: skyblue;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.inputField {
+    width: 250px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid yellow;
+    background-color: sandybrown;
+}
+
+.inputField:focus {
+    background-color: white;
+}
+
+.showResult {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.img {
+    margin: 10px;
+}
