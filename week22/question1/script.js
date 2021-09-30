@@ -37,19 +37,25 @@ btn.addEventListener('click', getInfo);
 async function getInfo() {
 
     const res = await fetch(`${api.endpoint}search?api_key=${api.key}&q=${input.value}&limit=5&offset=0&rating=g&lang=en`);
+    console.log(res)
 
+    const result = await res.json();
     try {
-        const result = await res.json();
+        if (result.meta.status !== 200) {
+            throw new Error('Сервер не доступен')
+        }
 
 
 
-    } catch {
-        alert('Сервер не доступен')
+    } catch (e) {
+        console.log(e.message)
     }
     postImages(result)
 
 
+
 }
+
 
 function postImages(result) {
 
@@ -60,3 +66,4 @@ function postImages(result) {
         input.value = '';
 
     }
+}
